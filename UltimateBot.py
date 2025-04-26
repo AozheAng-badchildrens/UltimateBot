@@ -17,13 +17,13 @@ from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 from playsound import playsound
 
-hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+hook = Webhook("https://discord.com/api/webhooks/")
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 keyboard = Controller()
 file_location = "C:\Math\schedule.xlsx"
 schedule = xlrd.open_workbook(file_location)
 sheet = schedule.sheet_by_index(0)
-pytesseract.pytesseract.tesseract_cmd = r'C:\Users\27359\AppData\Local\Programs\Tesseract-OCR\tesseract'
+pytesseract.pytesseract.tesseract_cmd = r'C:\Users\Local\Programs\Tesseract-OCR\tesseract'
 bit = 1
 ytho = False
 recordingended = False
@@ -77,7 +77,7 @@ def Mockingbird():
     IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
     volume = cast(interface, POINTER(IAudioEndpointVolume))
     volume.SetMasterVolumeLevel(-10.0, None) #max
-    hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+    hook = Webhook("https://discord.com/api/webhooks/")
     bug = "Error Occured at: " + str(findTime()[0]) + ' : ' + str(findTime()[1])
     hook.send(bug)
     # playsound('C:\Playlist\Mockingbird.mp3')
@@ -461,7 +461,7 @@ def listen_to_name(endh,endm,ID):
     previouscount = [0]
     string = ""
     replied = False
-    hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+    hook = Webhook("https://discord.com/api/webhooks/")
     isinbreakout = False
     timesjoined = 0
     while True:
@@ -580,8 +580,7 @@ def listen_to_name(endh,endm,ID):
                     breako.click()
                     isinbreakout = True
                     try:
-                        hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
-                        hook.send("In breakout!")
+                        hook = Webhook("https://discord.com/api/webhooks/")
                     except:
                         pass
                     try:
@@ -589,7 +588,7 @@ def listen_to_name(endh,endm,ID):
                         chatt.click()
                         time.sleep(2)
                     except:
-                        hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+                        hook = Webhook("https://discord.com/api/webhooks/")
                         hook.send("Failed to open chat!")
                 except:
                     isinbreakout = False
@@ -598,12 +597,12 @@ def listen_to_name(endh,endm,ID):
                 leavebreakout = driver.find_element_by_xpath('//*[@id="yDmH0d"]/div[3]/div/div[2]/div[3]/div/span/span')
                 leavebreakout.click()
                 isinbreakout = False
-                hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+                hook = Webhook("https://discord.com/api/webhooks/")
                 hook.send("Left breakout!")
             except:
                 isinbreakout = True
         if (int(findTime()[0]) >= endh and int(findTime()[1]) >= endm):
-            hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+            hook = Webhook("https://discord.com/api/webhooks/")
             driver.get("https://meet.google.com/landing?hs=193&pli=1&authuser=1")
             time.sleep(10)
             string = "Left Class Successfully at " + str(findTime()[0]) + ' : ' + str(findTime()[1])
@@ -653,7 +652,7 @@ def isclassover():
         ytho = True
         try:
             reply("here")
-            hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+            hook = Webhook("https://discord.com/api/webhooks/")
             pol = "Replied here at " + str(findTime()[0]) + ' : ' + str(findTime()[1])
             hook.send(pol)
         except:
@@ -725,7 +724,7 @@ def connectovpn():
 
 def joinmeeting(ID,endh,endm,starth,startm):
     global bit
-    hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+    hook = Webhook("https://discord.com/api/webhooks/")
     if (checkifdisconnected() == True):
         connectovpn()
         return
@@ -789,7 +788,7 @@ def joinmeeting(ID,endh,endm,starth,startm):
                 except:
                     py.moveTo(1342,635)
                     py.click()
-        hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+        hook = Webhook("https://discord.com/api/webhooks/")
         driver.implicitly_wait(40)
         time.sleep(20)
         if (checkifjoined() == True):
@@ -1101,15 +1100,15 @@ try:
     '&flowName=GlifWebSignIn&flowEntry = ServiceLogin') 
     driver.implicitly_wait(20) 
     loginbox = driver.find_element_by_xpath('//*[@id ="identifierId"]')
-    loginbox.send_keys("350349841@gapps.yrdsb.ca")
+    loginbox.send_keys("3534841@gapps.yrdsb.ca")
     loginbox.send_keys(Keys.RETURN)
     time.sleep(20)
     while (driver.title != 'YRDSB Google Apps Single Sign On'):
         time.sleep(1)
     login = driver.find_element_by_xpath('//*[@id="UserName"]')
-    login.send_keys("350349841")
+    login.send_keys("3534941")
     lul = driver.find_element_by_xpath('//*[@id="Password"]')
-    lul.send_keys("78qje8v3")
+    lul.send_keys("7qjev3")
     lul.send_keys(Keys.RETURN)
     time.sleep(10)
     driver.implicitly_wait(15)
@@ -1121,7 +1120,7 @@ try:
     py.moveTo(1125,577)
     py.click()
     time.sleep(15)
-    while (driver.title[14 : ] != '350349841@gapps.yrdsb.ca - York Region District School Board Mail'):
+    while (driver.title[14 : ] != '303941@gapps.yrdsb.ca - York Region District School Board Mail'):
         time.sleep(1)
 
     # Google Meet
@@ -1133,7 +1132,7 @@ try:
 
 except:
     Mockingbird()
-    hook = Webhook("https://discord.com/api/webhooks/808953673840984095/hlh07950g1lWBa7DNOmwhfCyAnNqP7f65J7p9anQBa5rSg0tvrRLzpTny5Gn2R9bIoMF")
+    hook = Webhook("https://discord.com/api/webhooks/")
     if (checkifdisconnected() == True):
         connectovpn()
     hook.send('Connection Error!')
